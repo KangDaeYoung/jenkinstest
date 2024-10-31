@@ -17,7 +17,8 @@ pipeline {
     stage('deploy and service') {
       steps {
         sh '''
-        sudo kubectl apply -f jenkins.yml
+        ansible master -m shell -a 'sudo kubectl create deploy web-red --replicas=3 --port=80 --image=kangdaeyoung/jenkinstest:pipetest'
+        ansible master -m shell -a 'sudo kubectl expose deploy web-red --type=LoadBalancer --port=80 --target-port=80 --name=web-red-svc'
         '''
       }
     }
