@@ -10,7 +10,7 @@ pipeline {
       steps {
         sh '''
         sudo docker build -t kangdaeyoung/jenkinstest:pipetest .
-        sudo docker push kangdaeyoung/jenkinstest:pipetest
+        docker push kangdaeyoung/jenkinstest:pipetest
         '''
       }
     }
