@@ -9,8 +9,8 @@ pipeline {
     stage('docker build and push') {
       steps {
         sh '''
-        docker build -t kangdaeyoung/jenkinstest:pipetest .
-        docker push kangdaeyoung/jenkinstest:pipetest
+        sudo docker build -t kangdaeyoung/jenkinstest:pipetest .
+        sudo docker push kangdaeyoung/jenkinstest:pipetest
         '''
       }
     }
