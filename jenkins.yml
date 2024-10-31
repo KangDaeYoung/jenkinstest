@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: yellow
-        image: kangdaeyoung/keduit:jktest
+        image: kangdaeyoung/jenkinstest:pipetest
         resources:
           limits:
             memory: "128Mi"
