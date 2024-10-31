@@ -5,14 +5,14 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: yellow-dp
+      app: yellow
   template:
     metadata:
       labels:
         app: yellow
     spec:
       containers:
-      - name: yellow-ct
+      - name: yellow
         image: kangdaeyoung/keduit:jktest
         resources:
           limits:
@@ -28,7 +28,7 @@ metadata:
   name: jenkins-svc
 spec:
   selector:
-    app: yellow-dp
+    app: yellow
   ports:
   - port:  80
     targetPort:  80
