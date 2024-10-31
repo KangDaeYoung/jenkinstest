@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: yellow
+spec:
+  selector:
+    matchLabels:
+      app: yellow-dp
+  template:
+    metadata:
+      labels:
+        app: yellow
+    spec:
+      containers:
+      - name: yellow-ct
+        image: kangdaeyoung/jenkinstest:yellow
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: jenkins-svc
+spec:
+  selector:
+    app: yellow-dp
+  ports:
+  - port:  80
+    targetPort:  80
+  type: LoadBalancer
