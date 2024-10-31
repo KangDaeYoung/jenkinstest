@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: yellow-ct
-        image: kangdaeyoung/jenkinstest:yellow
+        image: kangdaeyoung/keduit:jktest
         resources:
           limits:
             memory: "128Mi"
